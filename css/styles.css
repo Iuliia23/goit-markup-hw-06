@@ -10,7 +10,9 @@
     --color-modal: #FCFCFC;
     --color-modal-text:#757575;
 }
-* {
+*,
+::after,
+::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -220,7 +222,6 @@ margin-right: 40px;
     transform: translate(-50%, -50%);
 }
 .modal {
-    display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     position: absolute;
@@ -239,7 +240,6 @@ padding: 72px 24px 24px 24px;
     position: absolute;
     top: 24px;
     right: 24px;
-    margin-bottom: 24px;
     display: flex;
         justify-content: center;
         align-items: center;
@@ -262,6 +262,9 @@ text-align: center;
 color: var(--color-primary);
 margin-bottom: 16px;
 }
+.modal-form-field {
+margin-bottom: 8px;
+}
 .modal-form-desc {
     display: block;
     font-weight: 400;
@@ -279,7 +282,6 @@ margin-bottom: 16px;
 .modal-form-input {
     width: 100%;
     height: 40px;
-    margin-bottom: 8px;
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.25);
     padding-left: 38px;
@@ -293,7 +295,7 @@ border-color: var(--color-action);
     position: absolute;
     display: inline-block;
     left: 16px;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     fill: var(--color-primary);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -563,7 +565,6 @@ line-height: 1.5;
 }
 .footer-networks {
     margin-left: 120px;
-    margin-right: 80px;
 }
 .footer-social {
     margin-bottom: 16px;
@@ -608,23 +609,21 @@ justify-content: center;
 .networks-footer-link:focus {
     background-color: #31D0AA;
 }
-.form {
-   position: relative;
+.form-footer-subscribe {
+    margin-left: 80px;
     width: 456px;
     height: 80px;
     border-radius: 4px;
     background-color: var(--color-primary);
 }
 .form-footer {
-    display: flex;
-    width: 100%;
-    height: 100%;
+   display: flex;
+   align-items: center;
+   margin-top: 16px;
 
 }
 .form-footer input {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+
     width: 264px;
     height: 40px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -633,18 +632,20 @@ justify-content: center;
     padding: 8px 16px;
     background-color: var(--color-primary);
     box-shadow: 0px 4px rgba(0, 0, 0, 0.15);
+    font-weight: 600px;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: var(--color-white);
 }
-.form-footer input:placeholder {
+.form-footer input::placeholder {
     color: rgba(255, 255, 255, 0.6);
   
     font-size: 12px; 
     line-height: 2; 
     letter-spacing: 0.04em;
 }
-.form-footer label {
-  position: absolute;
-    left: 0;
-    top: 0;
+.form-subscribe {
 font-size: 16px;
  line-height: 1.5;
 letter-spacing: 0.02em;
@@ -654,9 +655,7 @@ letter-spacing: 0.02em;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    margin-left: 24px;
     width: 168px;
     height: 40px;
     color: var(--color-white);
